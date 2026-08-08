@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoVault Pro — El Organizador de Próxima Generación</title>
+    
+    <!-- ENLACES DE DISEÑO PREMIUM OPTIMIZADOS PARA GITHUB PAGES -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script defer src="https://cloudflare.com"></script>
+    
+    <style>
+        /* Forzamos el modo oscuro total y fuentes limpias */
+        html, body { background-color: #030712 !important; color: #f9fafb !important; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        .glow-indigo { background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(0,0,0,0) 70%); }
+        .glow-purple { background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(0,0,0,0) 70%); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body x-data="{ tab: 'inicio' }" class="bg-gray-950 text-gray-50 font-sans antialiased selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+    <!-- LUCES DE NEÓN DE FONDO STYLE APPLE -->
+    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] glow-indigo -z-10 pointer-events-none"></div>
+    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] glow-purple -z-10 pointer-events-none"></div>
+
+    <!-- MENÚ DE NAVEGACIÓN INTERACTIVO -->
+    <nav class="border-b border-gray-900 bg-gray-950/70 backdrop-blur-xl sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div @click="tab = 'inicio'" class="flex items-center space-x-3 cursor-pointer group">
+                <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 p-2.5 rounded-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white text-lg"></i>
+                </div>
+                <span class="font-black text-xl tracking-tight text-white">Photo<span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Vault</span><span class="text-xs text-indigo-500 ml-1">PRO</span></span>
+            </div>
+            
+            <!-- Pestañas de Ventana -->
+            <div class="hidden md:flex items-center space-x-1 bg-gray-900/60 p-1.5 rounded-full border border-gray-800 text-sm font-medium">
+                <button @click="tab = 'inicio'" :class="tab === 'inicio' ? 'bg-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'" class="px-5 py-2 rounded-full transition-all duration-300">Inicio</button>
+                <button @click="tab = 'tutoriales'" :class="tab === 'tutoriales' ? 'bg-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'" class="px-5 py-2 rounded-full transition-all duration-300">Cómo Funciona / Demo</button>
+                <button @click="tab = 'productos'" :class="tab === 'productos' ? 'bg-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'" class="px-5 py-2 rounded-full transition-all duration-300">Almacenamiento</button>
+                <button @click="tab = 'contacto'" :class="tab === 'contacto' ? 'bg-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'" class="px-5 py-2 rounded-full transition-all duration-300">Contacto</button>
+            </div>
+
+            <!-- Botón de Descarga Rápida -->
+            <a href="#descarga-directa" @click="tab = 'inicio'" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-bold text-white rounded-xl group bg-gradient-to-br from-purple-600 to-indigo-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-indigo-800">
+                <span class="relative px-5 py-2 transition-all ease-in duration-75 bg-gray-950 rounded-xl group-hover:bg-opacity-0">
+                    <i class="fa-solid fa-download mr-2"></i>Descarga Gratis
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- VENTANA 1: INICIO -->
+    <div x-show="tab === 'inicio'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
+        <header class="max-w-6xl mx-auto px-6 pt-12 pb-24 lg:flex lg:items-center lg:space-x-12">
+            <div class="lg:w-1/2 space-y-8 text-center lg:text-left" data-aos="fade-right">
+                <span class="inline-flex items-center space-x-2 bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-4 py-2 rounded-full border border-indigo-500/20">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                    <span>Organizador de Fotos de Próxima Generación</span>
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight tracking-tight">
+                    Tu desorden de fotos <br> arreglado en <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">un solo clic.</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0">
+                    El primer software inteligente de PC que escanea tus discos, elimina duplicados exactos de ráfagas y organiza tus recuerdos por fechas de forma impecable.
+                </p>
+                
+                <div id="descarga-directa" class="bg-gray-900/40 p-6 rounded-2xl border border-gray-800 max-w-md mx-auto lg:mx-0 backdrop-blur-sm space-y-4">
+                    <a href="#" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center space-x-3 transition shadow-lg shadow-indigo-600/30 group">
+                        <i class="fa-solid fa-download group-hover:animate-bounce"></i>
+                        <span>Instalar PhotoVault para Windows</span>
+                    </a>
+                    <div class="flex justify-between text-xs text-gray-500 px-2">
+                        <span><i class="fa-solid fa-shield-halved text-emerald-500 mr-1"></i> Verificado y Sin Virus</span>
+                        <span>Peso: 42 MB</span>
+                        <span>Win 10 / 11</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARRUSEL ANIMADO AUTOMÁTICO -->
+            <div class="lg:w-1/2 mt-16 lg:mt-0 relative" data-aos="fade-left" x-data="{ 
+                activeSlide: 1, 
+                slides: [
+                    { id: 1, url: 'https://unsplash.com', desc: 'Caos original: Miles de imágenes repetidas en carpetas sueltas' },
+                    { id: 2, url: 'https://unsplash.com', desc: 'Procesado inteligente: Localizando duplicados y fotos borrosas' },
+                    { id: 3, url: 'https://unsplash.com', desc: 'Resultado Pro: Álbumes perfectamente limpios e indexados' }
+                ],
+                init() { setInterval(() => { this.activeSlide = this.activeSlide === 3 ? 1 : this.activeSlide + 1 }, 4000) }
+            }">
+                <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-3xl blur-3xl opacity-20"></div>
+                <div class="relative bg-gray-900 border border-gray-800 p-3 rounded-2xl shadow-2xl">
+                    <div class="relative h-[380px] overflow-hidden rounded-xl">
+                        <template x-for="slide in slides" :key="slide.id">
+                            <div x-show="activeSlide === slide.id" 
+                                 x-transition:enter="transition ease-in-out duration-700" 
+                                 x-transition:enter-start="opacity-0 transform translate-x-12" 
+                                 x-transition:enter-end="opacity-100 transform translate-x-0"
+                                 x-transition:leave="transition ease-in-out duration-700" 
+                                 x-transition:leave-start="opacity-100 transform translate-x-0" 
+                                 x-transition:leave-end="opacity-0 transform -translate-x-12"
+                                 class="absolute inset-0">
+                                <img :src="slide.url" class="w-full h-full object-cover filter brightness-90" alt="Demo">
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-transparent p-6 pt-12">
+                                    <p class="text-sm font-bold text-white tracking-wide" x-text="slide.desc"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="flex justify-center space-x-2 mt-4">
+                        <template x-for="i in 3">
+                            <button @click="activeSlide = i" :class="activeSlide === i ? 'bg-indigo-500 w-8' : 'bg-gray-700 w-2'" class="h-2 rounded-full transition-all duration-300"></button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECCIÓN DE CIFRAS -->
+        <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="zoom-in">
